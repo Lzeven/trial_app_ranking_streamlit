@@ -3,10 +3,14 @@ import joblib
 import sklearn
 import pickle
 import numpy as np
+import os 
 
 st.title('Ranking prediction App for N-gage')
 try:
-        model = joblib.load('student_gamifi_ranking_model.pkl')
+        current_path = os.path.dirname(os.path.abspath(_file_))
+
+        model_full_path = os.path.join(current_path, 'student_gamifi_ranking_model.pkl' )
+        model = joblib.load(model_full_path)
 except FileNotFoundError:
         st.error("file not found, make sure the file is in the same folder. ")
 
