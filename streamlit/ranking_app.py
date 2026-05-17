@@ -3,7 +3,7 @@ import joblib
 import sklearn
 import pickle
 import numpy as np
-import os 
+
 
 st.title('Ranking prediction App for N-gage')
 try:
@@ -43,4 +43,11 @@ if st.button("predict this semester's Rank"):
         
         prediction = model.predict(input_data)
 
-        st.success (f"Predicted Rank:{prediction[0]:.2f}")
+        no_decimal = int(prediction[0])
+
+        st.success (f"Predicted Rank:{no_decimal}")
+
+
+
+
+
